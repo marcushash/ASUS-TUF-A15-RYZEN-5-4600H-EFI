@@ -50,8 +50,6 @@ The following **SSDTs** are included for proper ACPI patching:
 | **SSDT-USBX** | USB port power management | Properly maps all USB ports |
 | **SSDT-XOSI** | Handles OSI queries | Needed for macOS compatibility |
 
-These SSDTs are pre-configured in the `EFI/OC/ACPI` folder.
-
 ---
 
 ## Booting macOS ⛔
