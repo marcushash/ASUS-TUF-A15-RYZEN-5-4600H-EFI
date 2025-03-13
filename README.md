@@ -8,9 +8,8 @@
 
 ## Project Status
 
-### Screenshot 📸
-
-![About This Mac](Images/About%20Mac.png)
+### Screenshot 📸  
+![About Mac](./Images/About%20Mac.png)
 
 | **macOS Version** | **Status** |
 |------------------|-----------|
@@ -44,10 +43,12 @@ The following **SSDTs** are included for proper ACPI patching:
 
 | **SSDT** | **Purpose** | **Details** |
 |---------|------------|------------|
-| **SSDT-EC-USBX** | Emulates EC and fixes USB | Essential for AMD laptops |
-| **SSDT-PLUG** | Enables CPU power management | Required for Ryzen CPUs |
+| **SSDT-EC** | Emulates Embedded Controller | Essential for AMD laptops |
+| **SSDT-PLUG-ALT** | Enables CPU power management | Required for Ryzen CPUs |
 | **SSDT-HPET** | Fixes IRQ conflicts | Improves system stability |
-| **SSDT-XHC** | USB port mapping | Properly maps all USB ports |
+| **SSDT-PNLF** | Adds backlight control | Enables brightness slider |
+| **SSDT-USBX** | USB port power management | Properly maps all USB ports |
+| **SSDT-XOSI** | Handles OSI queries | Needed for macOS compatibility |
 
 These SSDTs are pre-configured in the `EFI/OC/ACPI` folder.
 
@@ -81,15 +82,20 @@ For **Wi-Fi and Bluetooth** on the **Intel AX210**:
 
 ---
 
-## Display Fix for NootedRed 🛠️
-If you have **no internal laptop display** after using **NootedRed**:  
-1. Try downloading the appropriate kexts from [this forum thread](https://forum.amd-osx.com/threads/nootedred-isnt-accelerating-graphics.5728/post-38822).  
-2. Test one kext at a time — one of them should work.  
-3. After macOS is installed, **increase VRAM to 2GB** using **Smokeless UMAF**.  
-4. Once macOS is running, update to the **latest version of NootedRed** by running **CI actions** from the GitHub repository.
+## NootedRed Display Fix 🖥️
+If you experience **no internal laptop display** after using the **NootedRed** fix:  
 
-➡️ **[Download Smokeless UMAF](https://github.com/SmokelessCPU/Smokeless_UMAF)**  
-➡️ **[NootedRed GitHub](https://github.com/NootInc/NootedRed)**
+1. **Download the updated kexts** from [this post](https://forum.amd-osx.com/threads/nootedred-isnt-accelerating-graphics.5728/post-38822).  
+2. Try one kext or the other — one should work.  
+3. **Increase VRAM to 2GB** using **Smokeless UMAF** after installing macOS.  
+4. **Update to the latest version of NootedRed** by running **CL actions** in the [NootedRed GitHub](https://github.com/NootInc/NootedRed).  
+
+---
+
+## Limitations ⚠️
+- ❌ **No NVIDIA Support** – GTX 1650 is unsupported in macOS.
+- ❌ **No Sidecar or Universal Control** – Limited by AMD/Intel architecture.
+- ⚠️ **Wi-Fi Requires Patching** – Intel AX210 needs either OpenIntelWireless (up to Sonoma 14.4) or OCLP spoof and patch (Sequoia).
 
 ---
 
