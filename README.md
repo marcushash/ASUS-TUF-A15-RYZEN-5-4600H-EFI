@@ -8,8 +8,9 @@
 
 ## Project Status
 
-### Screenshot 📸  
-*(Add a screenshot of macOS running on your TUF A15!)*
+### Screenshot 📸
+
+![About This Mac](Images/About%20Mac.png)
 
 | **macOS Version** | **Status** |
 |------------------|-----------|
@@ -72,7 +73,7 @@ For **Wi-Fi and Bluetooth** on the **Intel AX210**:
 - **Sequoia (15.x)**: 
   - Wi-Fi: Use **OCLP spoof and patch** method for native Wi-Fi support.
   - Bluetooth: Use **IntelBluetoothFirmware** with **BlueToolFixup**.
-  
+
 ➡️ **[Download OpenIntelWireless](https://github.com/OpenIntelWireless/itlwm)**  
 ➡️ **[Download IntelBluetoothFirmware](https://github.com/OpenIntelWireless/IntelBluetoothFirmware)**  
 ➡️ **[Spoof & Patch Trick for Sequoia](https://github.com/OpenIntelWireless/itlwm/issues/1009#issuecomment-2370919270)**  
@@ -80,32 +81,15 @@ For **Wi-Fi and Bluetooth** on the **Intel AX210**:
 
 ---
 
-## Fixing No Internal Display After Using NootedRed 🟠
+## Display Fix for NootedRed 🛠️
+If you have **no internal laptop display** after using **NootedRed**:  
+1. Try downloading the appropriate kexts from [this forum thread](https://forum.amd-osx.com/threads/nootedred-isnt-accelerating-graphics.5728/post-38822).  
+2. Test one kext at a time — one of them should work.  
+3. After macOS is installed, **increase VRAM to 2GB** using **Smokeless UMAF**.  
+4. Once macOS is running, update to the **latest version of NootedRed** by running **CI actions** from the GitHub repository.
 
-If your laptop display goes **black** or doesn’t turn on after applying the **NootedRed** patch for AMD iGPU acceleration:  
-
-1. **Try Alternate NootedRed Kexts:**  
-   - Download the available **NootedRed** kexts from this forum post:  
-   ➡️ [NootedRed Fix](https://forum.amd-osx.com/threads/nootedred-isnt-accelerating-graphics.5728/post-38822)  
-   - Swap out the current **NootedRed.kext** with one of the versions from the post.  
-   - Test one by one — **one should work** for your hardware.
-
-2. **Increase VRAM to 2GB:**  
-   - After installing macOS, use **Smokeless UMAF** to increase your iGPU VRAM to **2GB**.  
-   ➡️ [Smokeless UMAF](https://github.com/SmokelessCPU/UMAF)  
-
-3. **Update to Latest NootedRed:**  
-   - Once your display works and macOS is installed, update **NootedRed** by running **CL Actions** on the GitHub repository:  
-   ➡️ [NootedRed GitHub](https://github.com/NootInc/NootedRed/actions)  
-
-This should resolve the **no internal display** issue and give you **full GPU acceleration**! 🚀
-
----
-
-## Limitations ⚠️
-- ❌ **No NVIDIA Support** – GTX 1650 is unsupported in macOS.
-- ❌ **No Sidecar or Universal Control** – Limited by AMD/Intel architecture.
-- ⚠️ **Wi-Fi Requires Patching** – Intel AX210 needs either OpenIntelWireless (up to Sonoma 14.4) or OCLP spoof and patch (Sequoia).
+➡️ **[Download Smokeless UMAF](https://github.com/SmokelessCPU/Smokeless_UMAF)**  
+➡️ **[NootedRed GitHub](https://github.com/NootInc/NootedRed)**
 
 ---
 
@@ -120,7 +104,6 @@ If this EFI helped you, consider **buying me a coffee** to support my work! 🚀
 - [Dortania’s OpenCore Guide](https://dortania.github.io/OpenCore-Install-Guide/) for documentation.  
 - [OpenIntelWireless](https://github.com/OpenIntelWireless) for Intel Wi-Fi and Bluetooth support.  
 - [NootedRed](https://github.com/NootInc/NootedRed) for AMD GPU patches.  
-- [Smokeless UMAF](https://github.com/SmokelessCPU/UMAF) for iGPU VRAM tweaking.  
 - Hackintosh communities for testing and feedback.
 
 ---
